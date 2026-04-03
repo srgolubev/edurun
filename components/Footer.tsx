@@ -48,14 +48,14 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             {/* Logo + subtitle + date */}
             <div className="flex flex-col gap-3 items-start">
-              <div className="relative h-10 w-[120px]">
-                <Image
-                  src="/images/logo-main/mosobr.png"
-                  alt="Забег Московского Образования"
-                  fill
-                  className="object-contain object-left brightness-0 invert"
-                />
-              </div>
+              <Image
+                src="/images/logo-main/mosobr.png"
+                alt="Московское Образование"
+                width={512}
+                height={174}
+                className="h-8 md:h-10 w-auto max-w-[200px] brightness-0 invert"
+                style={{ objectFit: "contain" }}
+              />
               <p className="text-sm text-white/50 max-w-xs">
                 Забег Московского Образования
               </p>
