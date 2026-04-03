@@ -42,7 +42,7 @@ const cardVariants: Variants = {
 export default function Distances() {
   return (
     <section
-      id="дистанции"
+      id="distances"
       className="relative py-20 md:py-28"
       style={{ backgroundColor: "#EFEFEF" }}
     >

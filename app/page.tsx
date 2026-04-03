@@ -73,11 +73,19 @@ const jsonLdSchemas = [
       url: SITE_URL,
     },
     subEvent: [
-      { "@type": "SportsEvent", name: "Забег 1 КМ", description: "Дети до 10 лет и семейный забег", maximumAttendeeCapacity: 1000 },
-      { "@type": "SportsEvent", name: "Забег 3 КМ", description: "Подростки 11–14 лет", maximumAttendeeCapacity: 3000 },
-      { "@type": "SportsEvent", name: "Забег 5 КМ", description: "Без возрастных ограничений", maximumAttendeeCapacity: 4000 },
-      { "@type": "SportsEvent", name: "Забег 10 КМ", description: "Без возрастных ограничений", maximumAttendeeCapacity: 2000 },
+      { "@type": "SportsEvent", name: "Забег 1 КМ", description: "Дети до 10 лет и семейный забег", maximumAttendeeCapacity: 1000, url: `${SITE_URL}#distance-1km` },
+      { "@type": "SportsEvent", name: "Забег 3 КМ", description: "Подростки 11–14 лет", maximumAttendeeCapacity: 3000, url: `${SITE_URL}#distance-3km` },
+      { "@type": "SportsEvent", name: "Забег 5 КМ", description: "Без возрастных ограничений", maximumAttendeeCapacity: 4000, url: `${SITE_URL}#distance-5km` },
+      { "@type": "SportsEvent", name: "Забег 10 КМ", description: "Без возрастных ограничений", maximumAttendeeCapacity: 2000, url: `${SITE_URL}#distance-10km` },
     ],
+    potentialAction: {
+      "@type": "RegisterAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: SITE_URL,
+        actionPlatform: "https://schema.org/DesktopWebPlatform",
+      },
+    },
   },
   // Organization schema
   {

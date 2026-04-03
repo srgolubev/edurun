@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Дистанции", href: "#дистанции" },
-  { label: "Программа", href: "#программа" },
-  { label: "Участие", href: "#участие" },
-  { label: "Знаменитости", href: "#знаменитости" },
-  { label: "Мерч", href: "#мерч" },
+  { label: "Дистанции", href: "#distances" },
+  { label: "Программа", href: "#program" },
+  { label: "Участие", href: "#participation" },
+  { label: "Знаменитости", href: "#ambassadors" },
+  { label: "Мерч", href: "#merch" },
 ];
 
 function VKIcon({ size = 20 }: { size?: number }) {

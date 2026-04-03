@@ -30,7 +30,7 @@ const thematicRuns = [
 export default function Program() {
   return (
     <section
-      id="программа"
+      id="program"
       className="relative py-20 md:py-28"
       style={{ backgroundColor: "#EFEFEF" }}
     >

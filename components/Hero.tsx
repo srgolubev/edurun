@@ -53,7 +53,6 @@ export default function Hero() {
           width={320}
           height={480}
           className="w-48 lg:w-60 xl:w-72 h-auto object-contain"
-          priority
         />
       </motion.div>
 
@@ -70,7 +69,6 @@ export default function Hero() {
           width={320}
           height={480}
           className="w-48 lg:w-60 xl:w-72 h-auto object-contain"
-          priority
         />
       </motion.div>
 
@@ -85,7 +83,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          Забег Московского образования
+          Забег Московского Образования 2026
         </motion.h1>
 
         {/* Tagline */}

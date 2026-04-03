@@ -40,7 +40,7 @@ const cardVariants = {
 export default function HowToParticipate() {
   return (
     <section
-      id="\u0443\u0447\u0430\u0441\u0442\u0438\u0435"
+      id="participation"
       className="py-20 md:py-28"
       style={{ backgroundColor: "#EFEFEF" }}
     >

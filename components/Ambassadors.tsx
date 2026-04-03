@@ -81,7 +81,7 @@ const headingVariants: Variants = {
 export default function Ambassadors() {
   return (
     <section
-      id="знаменитости"
+      id="ambassadors"
       className="py-20 md:py-28"
       style={{ backgroundColor: "#EFEFEF", fontFamily: "'Golos Text', sans-serif" }}
     >

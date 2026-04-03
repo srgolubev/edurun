@@ -48,7 +48,8 @@ export default function CTABanner() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.45, delay: 0.3 }}
         >
-          <motion.button
+          <motion.a
+            href="#participation"
             className="inline-flex items-center px-14 sm:px-18 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg cursor-pointer"
             style={{
               backgroundColor: "#FFFFFF",
@@ -63,7 +64,7 @@ export default function CTABanner() {
             whileTap={{ scale: 0.97 }}
           >
             Регистрация
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

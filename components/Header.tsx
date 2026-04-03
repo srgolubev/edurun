@@ -6,11 +6,11 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Дистанции", href: "#дистанции" },
-  { label: "Программа", href: "#программа" },
-  { label: "Участие", href: "#участие" },
-  { label: "Знаменитости", href: "#знаменитости" },
-  { label: "Мерч", href: "#мерч" },
+  { label: "Дистанции", href: "#distances" },
+  { label: "Программа", href: "#program" },
+  { label: "Участие", href: "#participation" },
+  { label: "Знаменитости", href: "#ambassadors" },
+  { label: "Мерч", href: "#merch" },
 ];
 
 export default function Header() {
@@ -110,10 +110,10 @@ export default function Header() {
           {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-3">
             <motion.a
-              href="#участие"
+              href="#participation"
               onClick={(e) => {
                 e.preventDefault();
-                handleNavClick("#участие");
+                handleNavClick("#participation");
               }}
               className="hidden md:inline-flex items-center px-6 py-2.5 rounded-full text-sm font-semibold text-white bg-[#c82e3e] cursor-pointer"
               whileHover={{ scale: 1.03 }}
@@ -163,10 +163,10 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="#участие"
+                href="#participation"
                 onClick={(e) => {
                   e.preventDefault();
-                  handleNavClick("#участие");
+                  handleNavClick("#participation");
                 }}
                 className="mt-3 w-full py-3 rounded-full text-white font-semibold text-center bg-[#c82e3e] block"
               >

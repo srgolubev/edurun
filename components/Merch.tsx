@@ -24,7 +24,7 @@ const cardVariants = {
 export default function Merch() {
   return (
     <section
-      id="\u043c\u0435\u0440\u0447"
+      id="merch"
       className="py-20 md:py-28"
       style={{ backgroundColor: "#EFEFEF" }}
     >

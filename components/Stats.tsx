@@ -79,6 +79,16 @@ export default function Stats() {
   return (
     <section className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          className="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-4"
+          style={{ color: "#1A1015", fontFamily: "'Golos Text', sans-serif" }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Мероприятие в цифрах
+        </motion.h2>
         <motion.p
           className="text-center text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto mb-12 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
