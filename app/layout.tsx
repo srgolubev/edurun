@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/og-image.jpg`,
-        width: 1200,
-        height: 630,
+        url: `${SITE_URL}/og-image.png`,
+        width: 3840,
+        height: 1920,
         alt: "Забег Московского Образования 2026",
       },
     ],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Забег Московского Образования 2026",
     description:
       "Первый в истории Забег Московского Образования. 17 мая 2026 года. Садовое кольцо.",
-    images: [`${SITE_URL}/og-image.jpg`],
+    images: [`${SITE_URL}/og-image.png`],
   },
 };
 
