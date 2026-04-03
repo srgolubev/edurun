@@ -52,7 +52,7 @@ const ambassadors = [
   {
     name: "Алексей Смертин",
     title: "Российский футболист, обладатель Кубка России, чемпион Москвы и России по пляжному футболу",
-    photo: "/images/photo/smertin.webp",
+    photo: "/images/photo/smertin.jpeg",
   },
 ];
 
