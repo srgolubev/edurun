@@ -151,12 +151,12 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <h2
+          <p
             className="text-lg sm:text-xl font-bold mb-4 text-center"
             style={{ color: "#1A1A1A", fontFamily: "'Golos Text', sans-serif" }}
           >
             Почему ты должен быть там?
-          </h2>
+          </p>
           <ul className="space-y-3">
             {bulletPoints.map(({ bold, text }) => (
               <li

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://забегмосковскогообразования.рф/sitemap.xml",
+    sitemap: "https://zabegmosobr.ru/sitemap.xml",
   };
 }

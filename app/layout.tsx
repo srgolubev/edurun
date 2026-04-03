@@ -1,5 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+
+const SITE_URL = "https://zabegmosobr.ru";
+
+export const viewport: Viewport = {
+  themeColor: "#c82e3e",
+};
 
 export const metadata: Metadata = {
   title: "Забег Московского Образования 2026",
@@ -7,19 +13,21 @@ export const metadata: Metadata = {
     "Первый в истории Забег Московского Образования. 17 мая 2026 года. Садовое кольцо. 10 000 участников.",
   keywords:
     "забег, москва, образование, бег, спорт, 2026, садовое кольцо, школьные спортивные клубы",
+  authors: [{ name: "Департамент образования и науки города Москвы" }],
   alternates: {
-    canonical: "https://забегмосковскогообразования.рф",
+    canonical: SITE_URL,
   },
   openGraph: {
     title: "Забег Московского Образования 2026",
     description:
       "Первый в истории Забег Московского Образования. 17 мая 2026 года. Садовое кольцо. 10 000 участников.",
-    url: "https://забегмосковскогообразования.рф",
+    url: SITE_URL,
+    siteName: "Забег Московского Образования",
     locale: "ru_RU",
     type: "website",
     images: [
       {
-        url: "https://забегмосковскогообразования.рф/og-image.jpg",
+        url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "Забег Московского Образования 2026",
@@ -31,7 +39,7 @@ export const metadata: Metadata = {
     title: "Забег Московского Образования 2026",
     description:
       "Первый в истории Забег Московского Образования. 17 мая 2026 года. Садовое кольцо.",
-    images: ["https://забегмосковскогообразования.рф/og-image.jpg"],
+    images: [`${SITE_URL}/og-image.jpg`],
   },
 };
 

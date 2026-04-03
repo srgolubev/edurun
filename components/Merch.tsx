@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = [
-  "/images/photo/merch1.jpg",
-  "/images/photo/merch2.jpg",
-  "/images/photo/merch3.jpg",
-  "/images/photo/merch4.jpg",
-  "/images/photo/merch5.jpg",
-  "/images/photo/merch6.jpg",
+  { src: "/images/photo/merch1.jpg", alt: "Фирменная футболка участника забега" },
+  { src: "/images/photo/merch2.jpg", alt: "Спортивный рюкзак-мешок" },
+  { src: "/images/photo/merch3.jpg", alt: "Памятная медаль финишера" },
+  { src: "/images/photo/merch4.jpg", alt: "Экипировка участника забега" },
+  { src: "/images/photo/merch5.jpg", alt: "Стартовый пакет участника" },
+  { src: "/images/photo/merch6.jpg", alt: "Наградная атрибутика забега" },
 ];
 
 const cardVariants = {
@@ -53,7 +53,7 @@ export default function Merch() {
 
         {/* Image grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-          {images.map((src, i) => (
+          {images.map((item, i) => (
             <motion.div
               key={i}
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
@@ -65,8 +65,8 @@ export default function Merch() {
             >
               <div className="relative aspect-square overflow-hidden">
                 <Image
-                  src={src}
-                  alt={`Мерч ${i + 1}`}
+                  src={item.src}
+                  alt={item.alt}
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 33vw"
