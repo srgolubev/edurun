@@ -4,7 +4,17 @@ import type { NextRequest } from "next/server";
 const AUTH_USER = "mcvp";
 const AUTH_PASS = "edurun2026";
 
+const BOT_UA_RE =
+  /Telegram|WhatsApp|vkShare|VKontakte|Viber|Slack|Discord|Twitter|facebook|Iframely|Embedly|LinkedInBot|Pinterestbot|SkypeUriPreview|Google|Yahoo|Bing|Yandex|Mail\.RU|Applebot/i;
+
 export function middleware(request: NextRequest) {
+  const ua = request.headers.get("user-agent") || "";
+
+  // Let messenger/search bots through without auth
+  if (BOT_UA_RE.test(ua)) {
+    return NextResponse.next();
+  }
+
   const auth = request.headers.get("authorization");
 
   if (auth) {
