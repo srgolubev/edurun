@@ -15,6 +15,7 @@ const navLinks = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
@@ -34,7 +35,23 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    let lastY = window.scrollY;
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setIsScrolled(y > 20);
+      // On mobile: hide header on scroll down, show on scroll up
+      if (window.innerWidth < 768) {
+        if (y > lastY && y > 80) {
+          setHeaderVisible(false);
+          setMobileOpen(false);
+        } else {
+          setHeaderVisible(true);
+        }
+      } else {
+        setHeaderVisible(true);
+      }
+      lastY = y;
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -52,11 +69,12 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white shadow-[0_1px_8px_rgba(0,0,0,0.08)]"
-          : "bg-transparent"
+          : "bg-white"
       }`}
+      style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
       initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      animate={{ y: headerVisible ? 0 : -100, opacity: headerVisible ? 1 : 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">

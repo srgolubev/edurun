@@ -5,6 +5,7 @@ const SITE_URL = "https://zabegmosobr.ru";
 
 export const viewport: Viewport = {
   themeColor: "#c82e3e",
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
