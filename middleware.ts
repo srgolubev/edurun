@@ -7,15 +7,18 @@ const AUTH_PASS = "edurun2026";
 const BOT_UA_RE =
   /Telegram|WhatsApp|vkShare|VKontakte|Viber|Slack|Discord|Twitter|facebook|Iframely|Embedly|LinkedInBot|Pinterestbot|SkypeUriPreview|Google|Yahoo|Bing|Yandex|Mail\.RU|Applebot/i;
 
-export function middleware(request: NextRequest) {
-  const ua = request.headers.get("user-agent") || "";
+// AUTH TEMPORARILY DISABLED
+export function middleware(_request: NextRequest) {
+  return NextResponse.next();
 
-  // Let messenger/search bots through without auth
+  /* ORIGINAL AUTH — uncomment to re-enable
+  const ua = _request.headers.get("user-agent") || "";
+
   if (BOT_UA_RE.test(ua)) {
     return NextResponse.next();
   }
 
-  const auth = request.headers.get("authorization");
+  const auth = _request.headers.get("authorization");
 
   if (auth) {
     const [scheme, encoded] = auth.split(" ");
@@ -34,6 +37,7 @@ export function middleware(request: NextRequest) {
       "WWW-Authenticate": 'Basic realm="Zabeg"',
     },
   });
+  */
 }
 
 export const config = {
