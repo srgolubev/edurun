@@ -39,12 +39,14 @@ export default function Header() {
     const handleScroll = () => {
       const y = window.scrollY;
       setIsScrolled(y > 20);
-      // On mobile: hide header on scroll down, show on scroll up
+      // On mobile: hide on scroll down, show on scroll up (but not on overscroll bounce)
       if (window.innerWidth < 768) {
-        if (y > lastY && y > 80) {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const atBottom = y >= maxScroll - 5;
+        if (y > lastY && y > 80 && !atBottom) {
           setHeaderVisible(false);
           setMobileOpen(false);
-        } else {
+        } else if (y < lastY && !atBottom) {
           setHeaderVisible(true);
         }
       } else {
@@ -65,16 +67,13 @@ export default function Header() {
   };
 
   return (
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white shadow-[0_1px_8px_rgba(0,0,0,0.08)]"
-          : "bg-white"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-[transform,shadow] duration-300 ease-out ${
+        isScrolled ? "shadow-[0_1px_8px_rgba(0,0,0,0.08)]" : ""
+      } ${
+        headerVisible ? "translate-y-0" : "-translate-y-full"
       }`}
       style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: headerVisible ? 0 : -100, opacity: headerVisible ? 1 : 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -194,6 +193,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
