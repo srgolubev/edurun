@@ -95,7 +95,7 @@ export default function Ambassadors() {
           viewport={{ once: true, margin: "-80px" }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 tracking-tight">
-            Знаменитости
+            Лица проекта
           </h2>
         </motion.div>
 
@@ -148,7 +148,7 @@ export default function Ambassadors() {
                   {person.name}
                 </h3>
                 <p
-                  className="text-xs md:text-[0.75rem] leading-snug line-clamp-3"
+                  className="text-xs md:text-[0.75rem] leading-snug"
                   style={{ color: "rgba(23, 23, 23, 0.5)" }}
                 >
                   {person.title}

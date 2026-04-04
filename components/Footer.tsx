@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Дистанции", href: "#distances" },
   { label: "Программа", href: "#program" },
   { label: "Участие", href: "#participation" },
-  { label: "Знаменитости", href: "#ambassadors" },
+  { label: "Лица проекта", href: "#ambassadors" },
   { label: "Мерч", href: "#merch" },
 ];
 
